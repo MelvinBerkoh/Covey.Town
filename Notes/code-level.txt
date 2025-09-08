@@ -1,0 +1,50 @@
+Why does code-level design matter?
+  Software systems need to be understandable to humans
+  Maintenance is the largest part of the software lifecycle
+  Reading code is one of the most time consuming tasks in software development
+
+Coupling makes code hard to understand 
+  Definition: Two pieces of code are coupled if a change to one piece of code requires a change to the other piece of code
+
+Surprises make code hard to understand
+  follow established conventions, especially for naming
+  avoid clever implementations
+  try to make code as "greppable" as possible
+
+Some general principles
+  use good names
+             names are the only part of the documentation that's actually required
+             follow established conventions
+  make your data meaningful
+             Three decisions:
+              1. Decide what part of the information in the "real world" needs to be represented as data
+              2. Decide how that information needs to be represented as data
+              3. Document how to interpret the data in your computer as information about the real world  
+  one job per method
+              1. Each class, and each  method that class, should have one job, and only one job
+              2. If your method has more than one job, split it into 2 methods
+              3. Same principle applies for classes
+  do not repeat yourself
+              1. If you need something more than once, give it a name and use that name everywhere
+              2. Applies to :
+                  a. constants
+                  b. methods
+                  c. codeblocks
+                  d. classes (use a superclass)
+  avoid magic numbers/strings (don't hardcode values)
+              1. integer and float literals should usually not appear in complex expressions (exception x = x + 1 is always okay)
+              2. string literals should not appear in complex expressions
+
+
+              IN class example
+              ```
+                function grossTax(income: number): number {
+                  // bracket 1 10,000 - 20,000 -> 10%
+                  // bracket 2 20,000 - 50,000 -> 20%
+                  // bracket 3 50,000+      -> 30%
+                  const bracket1Threshold = 10000;
+                  const bracket2Threshold = 20000;
+                  const bracket3Threshold = 50000;
+
+                  // now we want to write the logic so that we can compute the tax NOTE that we only tax after the first 10,000
+                  if 
