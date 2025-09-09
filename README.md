@@ -23,6 +23,7 @@ To create an account and configure your local environment:
 
 1. Go to [Twilio](https://www.twilio.com/) and create an account. You do not need to provide a credit card to create a trial account.
 2. Create an API key and secret (select "API Keys" on the left under "Settings")
+ 
 3. Create a `.env` file in the `townService` directory, setting the values as follows:
 
 | Config Value            | Description                               |
