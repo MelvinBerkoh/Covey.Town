@@ -13,11 +13,51 @@ Exhaustive testing is testing every input in practice this is rarely possible: i
 
 
 How to write tests
-
+  **Choosing a comparator**
 Most common: exact match
   Also common:
     over-approximation (is the output one of these good values, or , more commonly , "is there any output at all")
     Under-approximation("does the output contain this expected value")
     But, could be an arbitrarily-complex boolean function
         must be boolean, because test needs to either pass or fail
-        
+
+  **Choosing an oracle**
+  tell you if the generated output is correct or not. A little bit different than expected output
+    As a human, you get this from the specification
+        Ask yourself: "What should the program do with this input?"
+        Advice: always write down the oracle
+              common (low quality) oracle: add a printf statement to the program, run it check by hand that the output is what you expected
+
+    Choosing an oracle automatically is very hard
+        key problem in automated test generation
+
+  **Choosing Inputs**
+    When writing tests by hand, this is often the hardest part (we as humans can't think of all inputs sometimes very tedious)
+    Strategies:
+              choose at random (avoid when writing by hand)
+              edge cases Examples (0,1,-1 null, empty list, empty file,etc)
+              partition testing
+                        Key Idea: split up the input space into redundant"regions"
+                        Write one test for each region
+                        possible ways to split up the input:
+                                parity(even,odd)
+                                positive, negative, zero
+                                jpg files vs png files
+                                correctly-formatted input vs incorrectly-formatted input
+
+## Different Kinds of tests and how to use them 
+  ** Kinds of tests **
+Many ways to classify test:
+      by size: how many resources do the test need?
+      by scope: what sort of thing is the SUT?
+      by purpose: why are we testing?
+      by manner: how is testing performed?
+
+** Unit test **
+A unit test tests individual "units" of source code: procedures, methods, classes, modules, etc.
+  Unit test are characterized by scope: you can tell a test is a unit test because it test only a single component
+  Typically they should be small and fast
+  test features in isolation, which makes debugging easier
+  Modern frameworks are often based on SUnit
+
+  
