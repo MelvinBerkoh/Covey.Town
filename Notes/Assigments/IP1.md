@@ -195,6 +195,26 @@ This method acts as the bridge between backend game state and UI.
 
 1. Ensure all modified files are listed in `"files"` in `package.json`.
 2. Run:
+
    ```bash
    npm run zip
    ```
+
+   This creates `covey-town.zip`.
+
+3. Submit `covey-town.zip` to Gradescope under the correct assignment.
+
+**Gradescope will run:**
+
+- Linter checks
+- Functional tests
+- Mutation coverage on your tests
+
+---
+
+## Important Notes
+
+- Gradescope allows **5 submissions per 24 hours**
+- Failed submissions do **not** count toward this limit
+- Feedback may take **up to 40 minutes**
+- Gradescope does **not** show manual style grading results until later
