@@ -1,0 +1,23 @@
+What is testing?
+  A test executes a given input on a program (the system under test or SUT) and compare the SUT's output to a given oracle
+
+Building a test case
+
+    You usually know the SUT
+    You choose inputs
+    Run the SUT on the chosen inputs to produce the output
+    You choose the comparator
+    You choose the oracle
+
+Exhaustive testing is testing every input in practice this is rarely possible: input space is too large
+
+
+How to write tests
+
+Most common: exact match
+  Also common:
+    over-approximation (is the output one of these good values, or , more commonly , "is there any output at all")
+    Under-approximation("does the output contain this expected value")
+    But, could be an arbitrarily-complex boolean function
+        must be boolean, because test needs to either pass or fail
+        
