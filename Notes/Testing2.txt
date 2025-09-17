@@ -1,0 +1,27 @@
+## Hermetic Test
+Definition: a hermetic test is fully self-contained: its behavior doesn't depend on anything except the test itself and the SUT.
+  -Avoid dependencies on the environment
+  -Being hermetic is also important for builds generally
+
+## Brittle test
+Definition: a brittle test fails for reasons unrelated to what it ostensibly tests.
+  -Common causes:
+    -Dependencies on the environment
+    -Dependencies on other tests
+    -Timing dependencies
+    -Order dependencies
+    -COmparator or oracle is too specific
+
+## Mystery tests
+Definition: a mystery test is one where the purpose of the test is not clear.
+  -commonly co-occurs with brittleness: test is brittle because it is too complicated and when it fails its not clear why
+  -Best practice: test should give as much information as possible when they fail
+    - implication: when writing tests, think about why they might fail in the future and document that in the test itself.
+
+## Flaky test
+Definition: a flaky test is one that sometimes passes and sometimes fails, even when nothing has changed
+  - Sometimes caused by brittleness
+  -Sometimes caused by non-determinism in the program itself
+
+# Test suite quality 
+  Definition: a test suite is a collection of test for the same program
