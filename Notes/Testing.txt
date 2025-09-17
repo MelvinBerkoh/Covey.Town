@@ -60,4 +60,16 @@ A unit test tests individual "units" of source code: procedures, methods, classe
   test features in isolation, which makes debugging easier
   Modern frameworks are often based on SUnit
 
-  
+** Integration test**
+An Integration test tests that multiple sub-components of a software work correctly when combined
+  GOAL: answer the question "Does our application work from start to finish?"
+  Typically combined with unit testing : unit test individual components, them test that they integrate together properly
+
+
+## Mocking
+
+Mock objects are simulated objects that mimic the behavior of real objects in controlled ways.
+
+In testing, mocking uses a mock object to test the behavior of some other object.
+    - analogy: use a crash test dummy instead of a real human to test automobiles. 
+
